@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import profileImg from '../../images/profile.png';
 import { Button, IconButton, AppBar, Toolbar, useMediaQuery, useTheme, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import Projects from "./Projects";
 const PageWrapper = styled.div`
   scroll-behavior: smooth;
 `;
@@ -11,7 +11,7 @@ const PageWrapper = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(120deg, #0d0d0d, #1a1a1a);
+  background-color: #0f0f0f;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -159,6 +159,7 @@ const Home = () => {
     ));
 
   return (
+    <>
     <PageWrapper>
       <AppBar position="fixed" sx={{ background: '#0d0d0d', boxShadow: '0 0 10px #111' }}>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
@@ -214,6 +215,8 @@ const Home = () => {
         </div>
       </Wrapper>
     </PageWrapper>
+    <Projects />
+    </>
   );
 };
 
