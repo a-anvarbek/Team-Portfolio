@@ -1,11 +1,8 @@
-import React from "react";
 import styled from "styled-components";
-import Navbar from "../components/Navbar";
-import Footer from "../home/Footer";
 
-import Products1 from "./images/products1.png";
-import Products2 from "./images/products2.png";
-import Products3 from "./images/products3.png";
+import Products1 from "../../images/products1.png";
+import Products2 from "../../images/products2.png";
+import Products3 from "../../images/products3.png";
 
 const ProjectsCtn = styled.div`
   width: 100%;
@@ -15,7 +12,6 @@ const ProjectsCtn = styled.div`
   font-family: "Inter", sans-serif;
   @media (max-width: 1024px) {
     padding: 100px 24px;
-   
   }
 `;
 
@@ -166,87 +162,107 @@ const ButtonRow = styled.div`
 const Projects = () => {
   return (
     <>
+      <ProjectsCtn>
+        <WidthCtn>
+          <SectionTitle>FEATURED PROJECTS</SectionTitle>
+          <SectionSubtitle>
+            Here are some of the selected projects that showcase my passion for
+            front-end development.
+          </SectionSubtitle>
 
+          <ProjectWrapper>
+            <ImageBox>
+              <Badge>Conceptual Work</Badge>
+              <Img src={Products1} alt="Project 1" />
+            </ImageBox>
+            <ProjectInfo>
+              <ProjectTitle>
+                Promotional landing page for our favorite show
+              </ProjectTitle>
+              <ProjectDesc>
+                Teamed up with a designer to breathe life into a promotional
+                webpage for our beloved show, Adventure Time. Delivered a fully
+                responsive design with dynamic content capabilities...
+              </ProjectDesc>
+              <InfoTitle>Project Info</InfoTitle>
+              <InfoTable>
+                <div>
+                  <span>Year</span>
+                  <span>2023</span>
+                </div>
+                <div>
+                  <span>Role</span>
+                  <span>Front-end Developer</span>
+                </div>
+              </InfoTable>
+              <ButtonRow>
+                <a href="#">LIVE DEMO ↗</a>
+                <a href="#">SEE ON GITHUB 🟢</a>
+              </ButtonRow>
+            </ProjectInfo>
+          </ProjectWrapper>
 
-    <Navbar />
+          <ProjectWrapper>
+            <ImageBox>
+              <Img src={Products2} alt="Project 2" />
+            </ImageBox>
+            <ProjectInfo>
+              <ProjectTitle>Blog site for World News</ProjectTitle>
+              <ProjectDesc>
+                Mastered CSS Grid complexities in building an innovative news
+                homepage...
+              </ProjectDesc>
+              <InfoTitle>Project Info</InfoTitle>
+              <InfoTable>
+                <div>
+                  <span>Client</span>
+                  <span>World News</span>
+                </div>
+                <div>
+                  <span>Year</span>
+                  <span>2022</span>
+                </div>
+                <div>
+                  <span>Role</span>
+                  <span>Front-end Developer</span>
+                </div>
+              </InfoTable>
+              <ButtonRow>
+                <a href="#">VIEW PROJECT ↗</a>
+              </ButtonRow>
+            </ProjectInfo>
+          </ProjectWrapper>
 
-
-
-    <ProjectsCtn>
-      <WidthCtn>
-        <SectionTitle>FEATURED PROJECTS</SectionTitle>
-        <SectionSubtitle>
-          Here are some of the selected projects that showcase my passion for front-end development.
-        </SectionSubtitle>
-
-        <ProjectWrapper>
-          <ImageBox>
-            <Badge>Conceptual Work</Badge>
-            <Img src={Products1} alt="Project 1" />
-          </ImageBox>
-          <ProjectInfo>
-            <ProjectTitle>Promotional landing page for our favorite show</ProjectTitle>
-            <ProjectDesc>
-              Teamed up with a designer to breathe life into a promotional webpage for our beloved show,
-              Adventure Time. Delivered a fully responsive design with dynamic content capabilities...
-            </ProjectDesc>
-            <InfoTitle>Project Info</InfoTitle>
-            <InfoTable>
-              <div><span>Year</span><span>2023</span></div>
-              <div><span>Role</span><span>Front-end Developer</span></div>
-            </InfoTable>
-            <ButtonRow>
-              <a href="#">LIVE DEMO ↗</a>
-              <a href="#">SEE ON GITHUB 🟢</a>
-            </ButtonRow>
-          </ProjectInfo>
-        </ProjectWrapper>
-
-        <ProjectWrapper>
-          <ImageBox>
-            <Img src={Products2} alt="Project 2" />
-          </ImageBox>
-          <ProjectInfo>
-            <ProjectTitle>Blog site for World News</ProjectTitle>
-            <ProjectDesc>
-              Mastered CSS Grid complexities in building an innovative news homepage...
-            </ProjectDesc>
-            <InfoTitle>Project Info</InfoTitle>
-            <InfoTable>
-              <div><span>Client</span><span>World News</span></div>
-              <div><span>Year</span><span>2022</span></div>
-              <div><span>Role</span><span>Front-end Developer</span></div>
-            </InfoTable>
-            <ButtonRow>
-              <a href="#">VIEW PROJECT ↗</a>
-            </ButtonRow>
-          </ProjectInfo>
-        </ProjectWrapper>
-
-        <ProjectWrapper>
-          <ImageBox>
-            <Badge>Challenge</Badge>
-            <Img src={Products3} alt="Project 3" />
-          </ImageBox>
-          <ProjectInfo>
-            <ProjectTitle>E-commerce product page</ProjectTitle>
-            <ProjectDesc>
-              Successfully crafted an engaging product page featuring a dynamic lightbox gallery...
-            </ProjectDesc>
-            <InfoTitle>Project Info</InfoTitle>
-            <InfoTable>
-              <div><span>Year</span><span>2022</span></div>
-              <div><span>Role</span><span>Front-end Developer</span></div>
-            </InfoTable>
-            <ButtonRow>
-              <a href="#">LIVE DEMO ↗</a>
-              <a href="#">SEE ON GITHUB 🟢</a>
-            </ButtonRow>
-          </ProjectInfo>
-        </ProjectWrapper>
-      </WidthCtn>
-    </ProjectsCtn>
-    <Footer />
+          <ProjectWrapper>
+            <ImageBox>
+              <Badge>Challenge</Badge>
+              <Img src={Products3} alt="Project 3" />
+            </ImageBox>
+            <ProjectInfo>
+              <ProjectTitle>E-commerce product page</ProjectTitle>
+              <ProjectDesc>
+                Successfully crafted an engaging product page featuring a
+                dynamic lightbox gallery...
+              </ProjectDesc>
+              <InfoTitle>Project Info</InfoTitle>
+              <InfoTable>
+                <div>
+                  <span>Year</span>
+                  <span>2022</span>
+                </div>
+                <div>
+                  <span>Role</span>
+                  <span>Front-end Developer</span>
+                </div>
+              </InfoTable>
+              <ButtonRow>
+                <a href="#">LIVE DEMO ↗</a>
+                <a href="#">SEE ON GITHUB 🟢</a>
+              </ButtonRow>
+            </ProjectInfo>
+          </ProjectWrapper>
+        </WidthCtn>
+      </ProjectsCtn>
     </>
   );
 };
