@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Navbar from "../components/Navbar";
+import Footer from "../home/Footer";
 
 import Products1 from "./images/products1.png";
 import Products2 from "./images/products2.png";
@@ -11,6 +13,10 @@ const ProjectsCtn = styled.div`
   background-color: #0f0f0f;
   color: #ffffff;
   font-family: "Inter", sans-serif;
+  @media (max-width: 1024px) {
+    padding: 100px 24px;
+   
+  }
 `;
 
 const WidthCtn = styled.div`
@@ -159,6 +165,13 @@ const ButtonRow = styled.div`
 
 const Projects = () => {
   return (
+    <>
+
+
+    <Navbar />
+
+
+
     <ProjectsCtn>
       <WidthCtn>
         <SectionTitle>FEATURED PROJECTS</SectionTitle>
@@ -233,6 +246,8 @@ const Projects = () => {
         </ProjectWrapper>
       </WidthCtn>
     </ProjectsCtn>
+    <Footer />
+    </>
   );
 };
 

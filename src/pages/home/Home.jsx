@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import profileImg from '../../images/profile.png';
 import { Button, IconButton, AppBar, Toolbar, useMediaQuery, useTheme, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import Projects from "./Projects";
+import Footer from "./Footer";
+import About from "../about/About";
+import { useNavigate } from "react-router";
+
+
+
 
 const PageWrapper = styled.div`
   scroll-behavior: smooth;
@@ -11,12 +18,12 @@ const PageWrapper = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(120deg, #0d0d0d, #1a1a1a);
+  background-color: #0f0f0f;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8rem 6rem 4rem;
+  padding: 60px 120px;
   box-sizing: border-box;
 
   @media (max-width: 1024px) {
@@ -126,68 +133,19 @@ const Section = styled.section`
 `;
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
-  const menuItems = [
-     { text: 'Home', href: '#home' },
-    { text: 'About', href: '#about' },
-    { text: 'Work', href: '#work' },
-    { text: 'Contact', href: '#contact' },
-  ];
 
-  const renderButtons = () =>
-    menuItems.map((item) => (
-      <Button
-        key={item.text}
-        href={item.href}
-        variant="outlined"
-        sx={{
-          borderColor: '#d5ff60',
-          color: '#d5ff60',
-          '&:hover': {
-            borderColor: '#c6ec4f',
-            backgroundColor: '#1a1a1a',
-          },
-          fontWeight: 'bold',
-          textTransform: 'none',
-        }}
-      >
-        {item.text}
-      </Button>
-    ));
+
 
   return (
+    <>
     <PageWrapper>
-      <AppBar position="fixed" sx={{ background: '#0d0d0d', boxShadow: '0 0 10px #111' }}>
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <NameTopCorner>
-            <MiniImage src={profileImg} alt="Azizbek" />
-            <NameText>Azizbek Abdukhakimov</NameText>
-          </NameTopCorner>
-
-          {isMobile ? (
-            <>
-              <IconButton onClick={() => setDrawerOpen(true)} sx={{ color: '#d5ff60' }}>
-                <MenuIcon />
-              </IconButton>
-              <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-                <List sx={{ width: 200 }}>
-                  {menuItems.map((item) => (
-                    <ListItem button component="a" href={item.href} key={item.text} onClick={() => setDrawerOpen(false)}>
-                      <ListItemText primary={item.text} />
-                    </ListItem>
-                  ))}
-                </List>
-              </Drawer>
-            </>
-          ) : (
-            <div style={{ display: 'flex', gap: '1rem' }}>{renderButtons()}</div>
-          )}
-        </Toolbar>
-      </AppBar>
-
+     
       <Wrapper>
         <TextSection>
           <Title>
@@ -214,6 +172,26 @@ const Home = () => {
         </div>
       </Wrapper>
     </PageWrapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <Projects />
+    <About />
+
+    <Footer />
+    </>
   );
 };
 
