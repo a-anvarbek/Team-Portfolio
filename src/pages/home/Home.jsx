@@ -1,15 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import profileImg from '../../images/profile.png';
-import { Button, IconButton, AppBar, Toolbar, useMediaQuery, useTheme, Drawer, List, ListItem, ListItemText } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import Projects from "./Projects";
-import Footer from "./Footer";
-import About from "../about/About";
+import { useState } from "react";
 import { useNavigate } from "react-router";
+import { Button, IconButton, useMediaQuery, useTheme } from "@mui/material";
+import styled from "styled-components";
 
+import Projects from "./Projects";
+import About from "../about/About";
 
-
+import profileImg from "../../images/profile.png";
 
 const PageWrapper = styled.div`
   scroll-behavior: smooth;
@@ -136,61 +133,68 @@ const Home = () => {
   const navigate = useNavigate();
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
-
-
-
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <>
-    <PageWrapper>
-     
-      <Wrapper>
-        <TextSection>
-          <Title>
-            Hello, I’m <span>Azizbek Abdukhakimov</span>
-          </Title>
-          <Subtitle>
-            I’m a frontend developer. I build modern, responsive, and user-friendly websites using technologies like HTML, CSS, JavaScript, and React.
-          </Subtitle>
-          <ButtonRow>
-            <Button variant="contained" sx={{ backgroundColor: '#d5ff60', color: '#000', fontWeight: 'bold' }}>Contact Me</Button>
-            <IconButton href="https://linkedin.com" target="_blank" sx={{ color: 'white', backgroundColor: '#1c1c1c', '&:hover': { backgroundColor: '#333' } }}>
-              <i className="fab fa-linkedin-in"></i>
-            </IconButton>
-            <IconButton href="https://github.com/abdukhakimovdev" target="_blank" sx={{ color: 'white', backgroundColor: '#1c1c1c', '&:hover': { backgroundColor: '#333' } }}>
-              <i className="fab fa-github"></i>
-            </IconButton>
-          </ButtonRow>
-        </TextSection>
+      <PageWrapper>
+        <Wrapper>
+          <TextSection>
+            <Title>
+              Hello, I’m <span>Azizbek Abdukhakimov</span>
+            </Title>
+            <Subtitle>
+              I’m a frontend developer. I build modern, responsive, and
+              user-friendly websites using technologies like HTML, CSS,
+              JavaScript, and React.
+            </Subtitle>
+            <ButtonRow>
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "#d5ff60",
+                  color: "#000",
+                  fontWeight: "bold",
+                }}
+              >
+                Contact Me
+              </Button>
+              <IconButton
+                href="https://linkedin.com"
+                target="_blank"
+                sx={{
+                  color: "white",
+                  backgroundColor: "#1c1c1c",
+                  "&:hover": { backgroundColor: "#333" },
+                }}
+              >
+                <i className="fab fa-linkedin-in"></i>
+              </IconButton>
+              <IconButton
+                href="https://github.com/abdukhakimovdev"
+                target="_blank"
+                sx={{
+                  color: "white",
+                  backgroundColor: "#1c1c1c",
+                  "&:hover": { backgroundColor: "#333" },
+                }}
+              >
+                <i className="fab fa-github"></i>
+              </IconButton>
+            </ButtonRow>
+          </TextSection>
 
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-          <ProfileWrapper>
-            <ProfileImage src={profileImg} alt="Azizbek Abdukhakimov" />
-          </ProfileWrapper>
-        </div>
-      </Wrapper>
-    </PageWrapper>
+          <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+            <ProfileWrapper>
+              <ProfileImage src={profileImg} alt="Azizbek Abdukhakimov" />
+            </ProfileWrapper>
+          </div>
+        </Wrapper>
+      </PageWrapper>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <Projects />
-    <About />
-
-    <Footer />
+      <Projects />
+      <About />
     </>
   );
 };

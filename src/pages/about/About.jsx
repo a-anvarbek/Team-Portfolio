@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import Footer from "../home/Footer";
+import Contact from "../components/Contact";
 
 // === SECTION LAYOUT ===
 export const Section = styled.section`
@@ -227,6 +227,7 @@ export default function AboutMe() {
   return (
     <>
       <Navbar />
+      
       <Section>
         <Left>
           <Title>ABOUT ME</Title>
@@ -300,7 +301,7 @@ export default function AboutMe() {
         </JobItem>
       </ExperienceBox>
       
-      <Footer />
+      <Contact />
     </>
   );
 }

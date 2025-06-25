@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import {
   AppBar,
@@ -13,7 +13,8 @@ import {
   useTheme
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import profileImg from '../../images/profile.png'; // mos path bo'lishi kerak
+
+import profileImg from '../../images/profile.png';
 
 const NameTopCorner = styled.div`
   display: flex;
@@ -38,7 +39,7 @@ const NameText = styled.span`
 const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const menuItems = [
     { text: 'Home', href: '/' },
