@@ -149,7 +149,7 @@ const Home = () => {
       <Wrapper>
         <TextSection>
           <Title>
-            Hello, I’m <span>Azizbek Abdukhakimov</span>
+            Hello, I’m <span> Azizbek Abdukhakimov</span>
           </Title>
           <Subtitle>
             I’m a frontend developer. I build modern, responsive, and user-friendly websites using technologies like HTML, CSS, JavaScript, and React.
