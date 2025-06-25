@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import Navbar from "../components/Navbar";
 import { FaLinkedin, FaGithub, FaXTwitter, FaInstagram } from "react-icons/fa6";
+import styled from "styled-components";
+
+import Navbar from "./Navbar";
 
 const FooterSection = styled.section`
   display: flex;
@@ -140,46 +140,46 @@ const SubmitButton = styled.button`
   }
 `;
 
-export default function Footer() {
-  return ( 
-
-
+const Contact = () => {
+  return (
     <>
-    <Navbar />
+      <Navbar />
 
+      <FooterSection>
+        <Left>
+          <Title>LET’S CONNECT</Title>
+          <Text>
+            Say hello at{" "}
+            <a href="mailto:robertgarcia@gmail.com">robertgarcia@gmail.com</a>
+          </Text>
+          <Text>
+            For more info, here’s my <a href="#">resume</a>
+          </Text>
+          <Icons>
+            <FaLinkedin />
+            <FaGithub />
+            <FaXTwitter />
+            <FaInstagram />
+          </Icons>
+          <Copy>&copy; 2023 Robert Garcia</Copy>
+        </Left>
 
-    <FooterSection>
-      <Left>
-        <Title>LET’S CONNECT</Title>
-        <Text>
-          Say hello at <a href="mailto:robertgarcia@gmail.com">robertgarcia@gmail.com</a>
-        </Text>
-        <Text>
-          For more info, here’s my <a href="#">resume</a>
-        </Text>
-        <Icons>
-          <FaLinkedin />
-          <FaGithub />
-          <FaXTwitter />
-          <FaInstagram />
-        </Icons>
-        <Copy>&copy; 2023 Robert Garcia</Copy>
-      </Left>
-
-      <Right>
-        <Form>
-          <Label>Name</Label>
-          <Input type="text" placeholder="John Doe" />
-          <Label>Email</Label>
-          <Input type="email" />
-          <Label>Subject</Label>
-          <Input type="text" />
-          <Label>Message</Label>
-          <Textarea rows="4" />
-          <SubmitButton>SUBMIT</SubmitButton>
-        </Form>
-      </Right>
-    </FooterSection>
+        <Right>
+          <Form>
+            <Label>Name</Label>
+            <Input type="text" placeholder="John Doe" />
+            <Label>Email</Label>
+            <Input type="email" />
+            <Label>Subject</Label>
+            <Input type="text" />
+            <Label>Message</Label>
+            <Textarea rows="4" />
+            <SubmitButton>SUBMIT</SubmitButton>
+          </Form>
+        </Right>
+      </FooterSection>
     </>
   );
-}
+};
+
+export default Contact;
