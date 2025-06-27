@@ -13,6 +13,8 @@ import {
   useTheme
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import profileImg from '../../images/profile.png'; // mos path bo'lishi kerak
+import { useNavigate } from "react-router";
 
 import profileImg from '../../images/profile.png';
 
@@ -34,6 +36,7 @@ const NameText = styled.span`
   font-weight: bold;
   font-size: 1.1rem;
   color: #d5ff60;
+  cursor: pointer;
 `;
 
 const Navbar = () => {
@@ -42,9 +45,8 @@ const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const menuItems = [
-    { text: 'Home', href: '/' },
     { text: 'About', href: '/about' },
-    { text: 'Work', href: '/projects' },
+    { text: 'PROJECTS', href: '/projects' },
     { text: 'Contact', href: '/footer' },
   ];
 
@@ -69,12 +71,14 @@ const Navbar = () => {
       </Button>
     ));
 
+    const navigate = useNavigate();
   return (
+    
     <AppBar position="fixed" sx={{ background: '#0d0d0d', boxShadow: '0 0 10px #111' }}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         <NameTopCorner>
           <MiniImage src={profileImg} alt="Azizbek" />
-          <NameText>Azizbek Abdukhakimov</NameText>
+          <NameText onClick={() => navigate("/")}>Azizbek Abdukhakimov</NameText>
         </NameTopCorner>
 
         {isMobile ? (
